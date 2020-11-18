@@ -1,0 +1,305 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Jira Dashboard Gadgets",
+    "description": "**REST API DOCUMENTATION OF ROUTES**\n\nYou can try all REST operation using EXECUTE button \n",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "ssc-vm-c-0074.colo.seagate.com:9090",
+  "basePath": "/rest",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/filters/getPiAndComponents": {
+      "get": {
+        "tags": [
+          "Filters"
+        ],
+        "summary": "Get all PI and Components",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/filters/getSprintsForPi": {
+      "get": {
+        "tags": [
+          "Filters"
+        ],
+        "summary": "Get all Sprints for PI",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/filters/getSprintDetails": {
+      "get": {
+        "tags": [
+          "Filters"
+        ],
+        "summary": "Get Active Sprint details",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"sprints",
+            "in":"query",
+            "description":"3023,3025",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/storypoints/getVersion": {
+      "get": {
+        "tags": [
+          "User Story Burndown"
+        ],
+        "summary": "Get PI information",
+        "parameters": [
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/storypoints/getStoryPointsBurndown": {
+      "get": {
+        "tags": [
+          "User Story Burndown"
+        ],
+        "summary": "Get story points burndown",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"sprints",
+            "in":"query",
+            "description":"3023",
+            "required":false,
+            "type":"string"
+          },
+          {
+            "name":"components",
+            "in":"query",
+            "description":"22008",
+            "required":false,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/healthwidget/getAllHealthDataIssues": {
+      "get": {
+        "tags": [
+          "Health Widget"
+        ],
+        "summary": "Get project health information",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"sprints",
+            "in":"query",
+            "description":"3023",
+            "required":false,
+            "type":"string"
+          },
+          {
+            "name":"components",
+            "in":"query",
+            "description":"22008",
+            "required":false,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/velocity/getVelocityChart": {
+      "get": {
+        "tags": [
+          "PI Velocity"
+        ],
+        "summary": "Get PI velocity and prediction forecast",
+        "parameters": [
+          {
+            "name":"projectIdOrKey",
+            "in":"query",
+            "description":"E2",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"boardId",
+            "in":"query",
+            "description":"1274",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"versionId",
+            "in":"query",
+            "description":"33279",
+            "required":true,
+            "type":"string"
+          },
+          {
+            "name":"sprints",
+            "in":"query",
+            "description":"3023",
+            "required":false,
+            "type":"string"
+          },
+          {
+            "name":"components",
+            "in":"query",
+            "description":"22008",
+            "required":false,
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

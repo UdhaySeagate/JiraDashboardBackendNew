@@ -1,0 +1,8 @@
+.coverage
+test
+coverage
+swagger
+helpers/logger.js
+gateway
+test
+node_modules
